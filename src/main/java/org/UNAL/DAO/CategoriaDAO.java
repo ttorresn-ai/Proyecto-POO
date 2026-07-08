@@ -25,7 +25,6 @@ public class CategoriaDAO {
                 lista.add(cat);
             }
         } catch (SQLException e) {
-            System.out.println("Error al obtener categorías: " + e.getMessage());
         }
         return lista;
     }
@@ -45,7 +44,6 @@ public class CategoriaDAO {
                 );
             }
         } catch (SQLException e) {
-            System.err.println("Error al obtener categoría por ID: " + e.getMessage());
         }
         return null;
     }
