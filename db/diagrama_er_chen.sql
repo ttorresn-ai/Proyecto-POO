@@ -1,0 +1,231 @@
+-- ============================================================================
+--  NEXUS FINANCE // CORE_SYSTEM
+--  DIAGRAMA ENTIDAD-RELACIÓN — Notación de Chen
+--
+--  Este archivo acompaña al diagrama gráfico (db/diagrama_er.drawio) y al
+--  script de implementación (db/esquema.sql).
+--
+--  CONVENCIONES DE LA NOTACIÓN DE CHEN
+--    [ PK ]   Clave primaria        (subrayado en el diagrama)
+--    [ FK ]   Clave foránea
+--    ( MV )   Atributo multivaluado -> se dibuja con DOBLE ÓVALO
+--    ( DR )   Atributo derivado     -> se dibuja con ÓVALO PUNTEADO
+--    1, N     Cardinalidad de la relación
+--    ( P )    Participación total: la entidad fuerte no puede existir sin la relación
+--    ( 0 )    Participación parcial: la entidad débil admite existencia propia
+--
+--  Correspondencia con el modelo relacional:
+--    Entidad fuerte ........ tabla
+--    Entidad débil .......... tabla con FK que además es parte de su PK
+--    Atributo multivaluado ... tabla secundaria con FK a la entidad fuerte
+--    Atributo derivado ....... vista (VISTA) o columna calculada
+--    Relación N:M ............ tabla puente con PK compuesta
+--    Generalización .......... tabla superclase + tablas subclase con FK a la PK
+-- ============================================================================
+
+
+--  ┌─────────────────────────────────────────────────────────────────────┐
+--  │ ENTIDAD: USUARIOS                                                  │
+--  ├─────────────────────────────────────────────────────────────────────┤
+--  │  ( PK ) id              INT         Identificador único del usuario  │
+--  │         nombre          VARCHAR(80)  Nombre completo                  │
+--  │         email           VARCHAR(120) Correo, único en el sistema     │
+--  │         password        VARCHAR(255) Hash PBKDF2 de la contraseña     │
+--  │         creado_en       TIMESTAMP   Fecha de registro (del sistema)  │
+--  │                                                                     │
+--  │  ( MV ) telefonos        -->> tabla TELEFONOS                        │
+--  │  ( DR ) saldo_total      -->> vista v_saldo_usuario                 │
+--  │         total_presupuestos -->> derivado de PRESUPUESTOS            │
+--  └─────────────────────────────────────────────────────────────────────┘
+
+
+--  ┌─────────────────────────────────────────────────────────────────────┐
+--  │ ENTIDAD: PERFILES           Relación 1:1 con USUARIOS              │
+--  │              (entidad débil: su PK es la FK hacia USUARIOS)        │
+--  ├─────────────────────────────────────────────────────────────────────┤
+--  │  ( PK/FK ) usuario_id     INT    -> USUARIOS.id  (máximo un perfil) │
+--  │           biografia       VARCHAR(300)  Descripción libre          │
+--  │           idioma_preferido ENUM('es','en')  Idioma de la interfaz   │
+--  │           fecha_nacimiento DATE     Fecha de nacimiento             │
+--  │           avatar_url      VARCHAR(255)  Ruta de la imagen           │
+--  └─────────────────────────────────────────────────────────────────────┘
+--           RELACIÓN: POSEE  (0,1) ---- (1)     Un usuario, opcionalmente,
+--                                                    un perfil.
+
+
+--  ┌─────────────────────────────────────────────────────────────────────┐
+--  │ ENTIDAD: TELEFONOS           Atributo multivaluado de USUARIOS     │
+--  ├─────────────────────────────────────────────────────────────────────┤
+--  │  ( PK ) id            INT AUTO_INCREMENT                            │
+--  │  ( FK ) usuario_id    INT    -> USUARIOS.id                         │
+--  │         numero        VARCHAR(20)  Número de teléfono               │
+--  │         tipo          ENUM('MOVIL','FIJO','TRABAJO')               │
+--  │         es_principal  BOOLEAN     Teléfono de contacto principal    │
+--  │                                                                     │
+--  │  En Chen se representa como un atributo multivaluado de USUARIOS:  │
+--  │      telefonos { numero, tipo }   DOBLE ÓVALO                       │
+--  │  Un usuario puede tener CERO o VARIOS teléfonos.                   │
+--  └─────────────────────────────────────────────────────────────────────┘
+
+
+--  ┌─────────────────────────────────────────────────────────────────────┐
+--  │ ENTIDAD: CATEGORIAS          Catálogo global, sin usuario asociado │
+--  ├─────────────────────────────────────────────────────────────────────┤
+--  │  ( PK ) id     INT AUTO_INCREMENT                                    │
+--  │         nombre VARCHAR(60)  Nombre único de la categoría            │
+--  └─────────────────────────────────────────────────────────────────────┘
+
+
+--  ┌─────────────────────────────────────────────────────────────────────┐
+--  │ ENTIDAD: CUENTAS                                                    │
+--  ├─────────────────────────────────────────────────────────────────────┤
+--  │  ( PK ) id             INT AUTO_INCREMENT                           │
+--  │  ( FK ) propietario_id INT   -> USUARIOS.id  Dueño de la cuenta     │
+--  │         nombre         VARCHAR(80)   Nombre de la cuenta            │
+--  │         tipo_cuenta    VARCHAR(40)   Ahorros | Efectivo | Tarjeta   │
+--  │                                                                     │
+--  │  ( DR ) balance_actual  -->> derivado de INGRESOS - GASTOS          │
+--  │           Materializado en cuentas.balance_actual y mantenido       │
+--  │           dentro de la misma transacción que inserta el movimiento.  │
+--  └─────────────────────────────────────────────────────────────────────┘
+
+
+--  ┌─────────────────────────────────────────────────────────────────────┐
+--  │ ENTIDAD INTERMEDIA: USUARIO_CUENTA    Tabla puente de la relación N:M│
+--  ├─────────────────────────────────────────────────────────────────────┤
+--  │  ( PK/FK ) usuario_id  INT   -> USUARIOS.id                         │
+--  │  ( PK/FK ) cuenta_id   INT   -> CUENTAS.id                          │
+--  │           rol          ENUM('PROPIETARIO','EDITOR','VISUALIZADOR') │
+--  │           fecha_invitacion DATETIME  Cuándo selekró el acceso       │
+--  └─────────────────────────────────────────────────────────────────────┘
+--
+--  RELACIÓN: ACCEDE_A   (1) ──── (N)         USUARIOS  N:M  CUENTAS
+--
+--    Un USUARIO accede a N CUENTAS.
+--    Una CUENTA es accedida por N USUARIOS  (cuentas familiares, conjuntos).
+--
+--    La PK compuesta (usuario_id, cuenta_id) impide duplicar el acceso.
+--    El atributo rol describe la participación de cada usuario en la cuenta.
+--
+--    Nota: CUENTAS.propietario_id conserva quién creó la cuenta. No es
+--    redundante con USUARIO_CUENTA porque responde una pregunta distinta
+--    (propiedad vs. permiso) y permite exigir exactamente un PROPIETARIO.
+
+
+--  ┌─────────────────────────────────────────────────────────────────────┐
+--  │ ENTIDAD: PRESUPUESTOS          Límite de gasto por categoría/mes   │
+--  ├─────────────────────────────────────────────────────────────────────┤
+--  │  ( PK ) id           INT AUTO_INCREMENT                             │
+--  │  ( FK ) usuario_id   INT   -> USUARIOS.id                          │
+--  │  ( FK ) categoria_id INT   -> CATEGORIAS.id                        │
+--  │         monto_limite DECIMAL(14,2)  Monto máximo permitido           │
+--  │         mes          TINYINT  Mes (1-12)                            │
+--  │         anio         SMALLINT  Año                                  │
+--  │                                                                     │
+--  │  Restricción de unicidad: (usuario_id, categoria_id, mes, anio)     │
+--  │  impide dos presupuestos para la misma categoría en el mismo mes.   │
+--  │                                                                     │
+--  │  ( DR ) gastado  -->> derivado: SUM de GASTOS de la categoría       │
+--  └─────────────────────────────────────────────────────────────────────┘
+
+
+-- ============================================================================
+--  JERARQUÍA DE GENERALIZACIÓN / ESPECIALIZACIÓN
+-- ============================================================================
+--
+--                        ┌───────────────────────────┐
+--                        │      TRANSACCION          │  ENTIDAD SUPERCLASE
+--                        │      ( P ) Se especializa │
+--                        └───────────────────────────┘
+--                        ┌───────────┴───────────┐
+--                        │                       │
+--          ┌─────────────┴──────────┐  ┌─────────┴────────────┐
+--          │       INGRESO          │  │       GASTO          │
+--          │      SUBCLASE (P)      │  │     SUBCLASE (P)     │
+--          └────────────────────────┘  └──────────────────────┘
+--
+--  ATRIBUTOS COMUNES (tabla transacciones):
+--      ( PK ) id            INT AUTO_INCREMENT
+--      ( FK ) cuenta_id     INT  -> CUENTAS.id
+--      ( FK ) usuario_id    INT  -> USUARIOS.id
+--             fecha         DATE          Fecha del movimiento
+--             monto         DECIMAL(14,2) Importe, siempre > 0
+--             descripcion   VARCHAR(200)  Detalle del movimiento
+--
+--  ATRIBUTOS PROPIOS DE INGRESO (tabla ingresos):
+--      ( PK/FK ) transaccion_id INT -> TRANSACCIONES.id
+--                 origen         VARCHAR(80)  De dónde proviene el dinero
+--
+--  ATRIBUTOS PROPIOS DE GASTO (tabla gastos):
+--      ( PK/FK ) transaccion_id INT -> TRANSACCIONES.id
+--      ( FK )    categoria_id   INT -> CATEGORIAS.id
+--
+--  AMBIGÜEDAD DE TIPO RESUELTA (EER):
+--      Un INGreso y un GASTO comparten `monto`, pero se distinguen porque solo
+--      INGRESO tiene `origen` y solo GASTO tiene `categoria_id`. Esta
+--     disambiguation es precisamente lo que aporta la jerarquía al modelo.
+--
+--  IMPLEMENTACIÓN (tabla por subclase):
+--      La PK de cada subclase es la misma que la PK de la superclase, lo que
+--      garantiza cardinalidad 0..1: un movimiento es un ingreso O un gasto,
+--      nunca ambos y nunca ninguno sin insertar ambas filas en la misma
+--      transacción SQL.
+
+
+-- ============================================================================
+--  ATRIBUTOS DERIVADOS — implementados como vistas
+-- ============================================================================
+--
+--  v_saldo_usuario(usuario_id, nombre, saldo_total)
+--      saldo_total de USUARIOS = SUM(cuentas.balance_actual)
+--
+--  v_gasto_categoria_periodo(usuario_id, categoria_id, categoria, anio, mes, total_gastado)
+--      total gastado por categoría y periodo = SUM(transacciones.monto) de GASTOS
+--
+--  v_historial_movimientos(id, fecha, descripcion, monto, cuenta, tipo, origen, categoria)
+--      UNION de INGRESO y GASTO: recorre la jerarquía y homogeneous los atributos.
+
+
+-- ============================================================================
+--  REGLA DE NEGOCIO
+--  (no expresable con PRIMARY KEY ni FOREIGN KEY)
+-- ============================================================================
+--
+--  "No se pueden registrar movimientos con más de 90 días de antigüedad."
+--
+--  La regla depende del instante en que se inserta el registro, por lo que
+--  necesita comparar contra CURDATE(). MySQL prohíbe funciones no
+--  deterministas dentro de una restricción CHECK:
+--
+--      ERROR 3814: An expression of a check constraint 'chk' contains
+--      disallowed function: curdate.
+--
+--  Tampoco puede expresarse con PK/FK, porque depende del valor de una columna
+--  frente al momento actual, no de la igualdad entre claves.
+--
+--  IMPLEMENTACIÓN: trigger BEFORE INSERT
+--      trg_transacciones_fecha_limita
+--      SIGNAL SQLSTATE '45000' cuando NEW.fecha < CURDATE() - INTERVAL 90 DAY
+--
+--  REGLAS COMPLEMENTARIAS EXPRESADAS CON CHECK:
+--      chk_trans_monto        monto > 0
+--      chk_cuentas_saldo      balance_actual >= 0   (no se permite sobregiro)
+--      chk_pres_mes           mes BETWEEN 1 AND 12
+--      chk_pres_limite        monto_limite > 0
+--      chk_usuarios_nombre    longitud del nombre >= 3
+
+
+-- ============================================================================
+--  MATRIZ DE REQUISITOS CUMPLIDOS
+-- ============================================================================
+--  Requisito                          Dónde se cumple
+--  ---------------------------------------------------------------------------
+--  Mínimo 4 entidades                 10 tablas
+--  Relación 1:N                       USUARIOS -> CUENTAS, -> TRANSACCIONES
+--  Relación N:M                       USUARIO_CUENTA (USUARIOS <-> CUENTAS)
+--  Relación 1:1                       USUARIOS <-> PERFILES
+--  Atributo multivaluado              TELEFONOS (doble óvalo en USUARIOS)
+--  Atributo derivado                  vistas v_saldo_usuario, v_gasto_categoria_periodo
+--  Jerarquía (superclase + 2 sub)     TRANSACCION -> INGRESO, GASTO
+--  Restricción de negocio             trigger trg_transacciones_fecha_limita
+-- ============================================================================

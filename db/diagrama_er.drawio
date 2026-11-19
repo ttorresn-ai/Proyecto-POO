@@ -1,0 +1,327 @@
+<mxfile host="app.diagrams.net" agent="cli">
+  <diagram id="nexus-er" name="Nexus Finance ER">
+    <mxGraphModel dx="2811" dy="2489" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="titulo" parent="1" style="text;html=1;fontSize=18;fontStyle=1;fontFamily=Courier New;align=center;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;fontColor=#143642;" value="NEXUS FINANCE — Diagrama Entidad-Relación (Notación de Chen)" vertex="1">
+          <mxGeometry height="30" width="700" x="480" y="-2" as="geometry" />
+        </mxCell>
+        <mxCell id="leyenda" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;align=left;verticalAlign=top;fontFamily=Courier New;spacingLeft=8;spacingTop=6;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="LEYENDA:&#xa;PK = clave primaria   |   FK = clave foránea&#xa;(MV) = multivaluado, doble óvalo&#xa;(DR) = derivado, óvalo punteado&#xa;(P) = participación total   |   (0) = participación parcial" vertex="1">
+          <mxGeometry height="120" width="240" x="10" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="eUsuarios" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=14;fontFamily=Courier New;strokeWidth=3;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="USUARIOS" vertex="1">
+          <mxGeometry height="40" width="160" x="330" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="aId" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fontFamily=Courier New;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="PK id" vertex="1">
+          <mxGeometry height="28" width="90" x="300" as="geometry" />
+        </mxCell>
+        <mxCell id="aNombre" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="nombre" vertex="1">
+          <mxGeometry height="28" width="90" x="410" as="geometry" />
+        </mxCell>
+        <mxCell id="RGwcV6KlNyDzHzLOQxcd-1" edge="1" parent="1" source="aEmail" style="edgeStyle=orthogonalEdgeStyle;rounded=0;sketch=1;hachureGap=4;jiggle=2;curveFitting=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontColor=#143642;fillColor=#FAE5C7;" target="aId" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="315" y="50" />
+              <mxPoint x="345" y="50" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="aEmail" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="email" vertex="1">
+          <mxGeometry height="28" width="90" x="270" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="aPass" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="password" vertex="1">
+          <mxGeometry height="28" width="90" x="375" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="aTelefonos" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fontFamily=Courier New;fillColor=none;strokeWidth=3;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="telefonos&#xa;(MV)" vertex="1">
+          <mxGeometry height="30" width="90" x="480" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="aSaldo" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fontFamily=Courier New;fillColor=none;strokeWidth=2;dashed=1;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="saldo_total&#xa;(DR)" vertex="1">
+          <mxGeometry height="30" width="90" x="630" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="l1" edge="1" parent="1" source="eUsuarios" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aId">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l2" edge="1" parent="1" source="eUsuarios" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aNombre">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l3" edge="1" parent="1" source="eUsuarios" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aEmail">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l4" edge="1" parent="1" source="eUsuarios" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aPass">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l5" edge="1" parent="1" source="eUsuarios" style="edgeStyle=none;html=1;endArrow=none;dashed=1;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aTelefonos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l6" edge="1" parent="1" source="eUsuarios" style="edgeStyle=none;html=1;endArrow=none;dashed=1;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aSaldo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ePerfiles" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;fontFamily=Courier New;strokeWidth=2;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="PERFILES" vertex="1">
+          <mxGeometry height="40" width="150" x="300" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="aPerfil1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fontFamily=Courier New;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="PK/FK usuario_id" vertex="1">
+          <mxGeometry height="28" width="110" x="150" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="aPerfil2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="idioma_preferido" vertex="1">
+          <mxGeometry height="28" width="110" x="150" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="aPerfil3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="fecha_nacimiento" vertex="1">
+          <mxGeometry height="28" width="110" x="150" y="385" as="geometry" />
+        </mxCell>
+        <mxCell id="l7" edge="1" parent="1" source="ePerfiles" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aPerfil1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l8" edge="1" parent="1" source="ePerfiles" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aPerfil2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l9" edge="1" parent="1" source="ePerfiles" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aPerfil3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rPos" edge="1" parent="1" source="ePerfiles" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;fontFamily=Courier New;fontColor=default;endArrow=ERone;startArrow=ERmany;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="eUsuarios" value="POSEE&#xa;(0,1) —— (1)">
+          <mxGeometry relative="1" x="-0.1404" as="geometry">
+            <Array as="points">
+              <mxPoint x="375" y="340" />
+              <mxPoint x="460" y="340" />
+              <mxPoint x="460" y="205" />
+              <mxPoint x="270" y="205" />
+              <mxPoint x="270" y="70" />
+              <mxPoint x="410" y="70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eTelefonos" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;fontFamily=Courier New;strokeWidth=2;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="TELEFONOS&#xa;(tabla del atributo multivaluado)" vertex="1">
+          <mxGeometry height="45" width="150" x="530" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="aTel1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fontFamily=Courier New;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="PK id" vertex="1">
+          <mxGeometry height="26" width="80" x="465" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="aTel2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="numero" vertex="1">
+          <mxGeometry height="26" width="80" x="560" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="aTel3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="tipo" vertex="1">
+          <mxGeometry height="26" width="80" x="655" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="l10" edge="1" parent="1" source="eTelefonos" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aTel1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l11" edge="1" parent="1" source="eTelefonos" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aTel2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l12" edge="1" parent="1" source="eTelefonos" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aTel3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rTel" edge="1" parent="1" source="eTelefonos" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;fontFamily=Courier New;fontColor=default;endArrow=ERone;startArrow=ERmany;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="eUsuarios" value="tiene&#xa;N">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eCuentas" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;fontFamily=Courier New;strokeWidth=3;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="CUENTAS" vertex="1">
+          <mxGeometry height="40" width="160" x="880" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="aCue1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fontFamily=Courier New;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="PK id" vertex="1">
+          <mxGeometry height="26" width="90" x="1080" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aCue2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="nombre" vertex="1">
+          <mxGeometry height="26" width="90" x="1080" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="aCue3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="tipo_cuenta" vertex="1">
+          <mxGeometry height="26" width="90" x="1080" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="aCue4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fontFamily=Courier New;fillColor=none;strokeWidth=2;dashed=1;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="balance_actual&#xa;(DR)" vertex="1">
+          <mxGeometry height="30" width="90" x="1080" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="l13" edge="1" parent="1" source="eCuentas" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aCue1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l14" edge="1" parent="1" source="eCuentas" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aCue2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l15" edge="1" parent="1" source="eCuentas" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aCue3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l16" edge="1" parent="1" source="eCuentas" style="edgeStyle=none;html=1;endArrow=none;dashed=1;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aCue4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eUC" parent="1" style="rhombus;whiteSpace=wrap;html=1;fontSize=11;fontFamily=Courier New;strokeWidth=3;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="USUARIO_CUENTA" vertex="1">
+          <mxGeometry height="70" width="130" x="800" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="aUC1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=8;fontFamily=Courier New;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="PK/FK usuario_id" vertex="1">
+          <mxGeometry height="26" width="120" x="675" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="aUC2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=8;fontFamily=Courier New;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="PK/FK cuenta_id" vertex="1">
+          <mxGeometry height="26" width="120" x="675" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="aUC3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="rol" vertex="1">
+          <mxGeometry height="26" width="120" x="680" y="309" as="geometry" />
+        </mxCell>
+        <mxCell id="l17" edge="1" parent="1" source="eUC" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aUC1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l18" edge="1" parent="1" source="eUC" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aUC2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l19" edge="1" parent="1" source="eUC" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aUC3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rNM" edge="1" parent="1" source="eUC" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;fontStyle=1;fontFamily=Courier New;fontColor=default;endArrow=ERmany;startArrow=ERmany;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="eCuentas" value="ACCEDE_A  (N:M)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rNM2" edge="1" parent="1" source="eUC" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;fontFamily=Courier New;fontColor=default;endArrow=ERmany;startArrow=ERone;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="eUsuarios" value="1 : N">
+          <mxGeometry relative="1" x="-0.0097" y="-10" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="865" y="90" />
+              <mxPoint x="490" y="90" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eCategorias" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;fontFamily=Courier New;strokeWidth=2;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="CATEGORIAS" vertex="1">
+          <mxGeometry height="40" width="150" x="1190" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="aCat1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fontFamily=Courier New;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="PK id" vertex="1">
+          <mxGeometry height="26" width="90" x="1380" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="aCat2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=10;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="nombre" vertex="1">
+          <mxGeometry height="26" width="90" x="1380" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="l20" edge="1" parent="1" source="eCategorias" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aCat1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l21" edge="1" parent="1" source="eCategorias" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aCat2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="hierarquiaLabel" parent="1" style="text;html=1;fontSize=13;fontStyle=1;fontFamily=Courier New;align=center;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;fontColor=#143642;" value="JERARQUÍA DE GENERALIZACIÓN / ESPECIALIZACIÓN" vertex="1">
+          <mxGeometry height="25" width="500" x="330" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="eTrans" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=13;fontFamily=Courier New;strokeWidth=4;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="TRANSACCION&#xa;(superclase) — (P)" vertex="1">
+          <mxGeometry height="55" width="220" x="420" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="aT1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fontFamily=Courier New;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="PK id" vertex="1">
+          <mxGeometry height="24" width="85" x="200" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="aT2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="fecha" vertex="1">
+          <mxGeometry height="24" width="85" x="200" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="aT3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="monto" vertex="1">
+          <mxGeometry height="24" width="85" x="200" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="aT4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="descripcion" vertex="1">
+          <mxGeometry height="24" width="85" x="200" y="605" as="geometry" />
+        </mxCell>
+        <mxCell id="l22" edge="1" parent="1" source="eTrans" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aT1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l23" edge="1" parent="1" source="eTrans" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aT2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l24" edge="1" parent="1" source="eTrans" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aT3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l25" edge="1" parent="1" source="eTrans" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aT4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eIngreso" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontFamily=Courier New;strokeWidth=2;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="INGRESO&#xa;(subclase) — (P)" vertex="1">
+          <mxGeometry height="50" width="180" x="330" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="aI1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=8;fontFamily=Courier New;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="PK/FK transaccion_id" vertex="1">
+          <mxGeometry height="24" width="130" x="100" y="685" as="geometry" />
+        </mxCell>
+        <mxCell id="aI2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="origen" vertex="1">
+          <mxGeometry height="24" width="130" x="100" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="l26" edge="1" parent="1" source="eIngreso" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aI1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l27" edge="1" parent="1" source="eIngreso" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aI2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eGasto" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;fontFamily=Courier New;strokeWidth=2;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="GASTO&#xa;(subclase) — (P)" vertex="1">
+          <mxGeometry height="50" width="180" x="570" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="aG1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=8;fontFamily=Courier New;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="PK/FK transaccion_id" vertex="1">
+          <mxGeometry height="24" width="130" x="810" y="685" as="geometry" />
+        </mxCell>
+        <mxCell id="aG2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=8;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="FK categoria_id" vertex="1">
+          <mxGeometry height="24" width="130" x="720" y="629" as="geometry" />
+        </mxCell>
+        <mxCell id="l28" edge="1" parent="1" source="eGasto" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aG1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l29" edge="1" parent="1" source="eGasto" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aG2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="esp1" edge="1" parent="1" source="eTrans" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;fontStyle=1;fontFamily=Courier New;fontColor=default;endArrow=ERmany;startArrow=ERzeroToMany;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="eIngreso" value="ISA&#xa;(P)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="esp2" edge="1" parent="1" source="eTrans" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;fontStyle=1;fontFamily=Courier New;fontColor=default;endArrow=ERmany;startArrow=ERzeroToMany;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="eGasto" value="ISA&#xa;(P)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rGastoCat" edge="1" parent="1" source="eGasto" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;fontFamily=Courier New;fontColor=default;endArrow=ERone;startArrow=ERmany;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="eCategorias" value="clasifica en&#xa;N : 1">
+          <mxGeometry relative="1" x="0.0012" as="geometry">
+            <Array as="points">
+              <mxPoint x="970" y="725" />
+              <mxPoint x="970" y="340" />
+              <mxPoint x="1190" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rTransCuenta" edge="1" parent="1" source="eTrans" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;fontFamily=Courier New;fontColor=default;endArrow=ERone;startArrow=ERmany;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="eCuentas" value="se registra en&#xa;N : 1">
+          <mxGeometry relative="1" x="0.0007" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="547.5" />
+              <mxPoint x="920" y="190" />
+              <mxPoint x="960" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ePresup" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=13;fontFamily=Courier New;strokeWidth=3;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="PRESUPUESTOS" vertex="1">
+          <mxGeometry height="40" width="170" x="1180" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="aP1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fontFamily=Courier New;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="PK id" vertex="1">
+          <mxGeometry height="24" width="85" x="1400" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="aP2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="monto_limite" vertex="1">
+          <mxGeometry height="24" width="85" x="1400" y="485" as="geometry" />
+        </mxCell>
+        <mxCell id="aP3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=9;fontFamily=Courier New;fillColor=none;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="mes / anio" vertex="1">
+          <mxGeometry height="24" width="85" x="1400" y="520" as="geometry" />
+        </mxCell>
+        <mxCell id="aP4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fontSize=8;fontFamily=Courier New;fillColor=none;strokeWidth=2;dashed=1;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#0F8B8D;fontColor=#143642;" value="gastado&#xa;(DR)" vertex="1">
+          <mxGeometry height="28" width="85" x="1400" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="l30" edge="1" parent="1" source="ePresup" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aP1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l31" edge="1" parent="1" source="ePresup" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aP2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l32" edge="1" parent="1" source="ePresup" style="edgeStyle=none;html=1;endArrow=none;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aP3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="l33" edge="1" parent="1" source="ePresup" style="edgeStyle=none;html=1;endArrow=none;dashed=1;labelBackgroundColor=none;fontColor=default;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="aP4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rPresupUsu" edge="1" parent="1" source="ePresup" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;fontFamily=Courier New;fontColor=default;endArrow=ERone;startArrow=ERmany;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.8;entryDx=0;entryDy=0;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="eUsuarios" value="1 : N">
+          <mxGeometry relative="1" x="0.3861" y="10" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1265" y="40" />
+              <mxPoint x="490" y="40" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rPresupCat" edge="1" parent="1" source="ePresup" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;fontFamily=Courier New;fontColor=default;endArrow=ERone;startArrow=ERmany;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;labelBackgroundColor=none;rounded=0;sketch=1;curveFitting=1;jiggle=2;strokeColor=#A8201A;" target="eCategorias" value="N : 1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="notaTrigger" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;align=left;verticalAlign=top;fontFamily=Courier New;spacingLeft=8;spacingTop=6;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="REGLA DE NEGOCIO (no expresable con PK/FK)&#xa;&#xa;&quot;No se pueden registrar movimientos con más de 90 días de antigüedad&quot;&#xa;&#xa;MySQL prohíbe funciones no deterministas (CURDATE) dentro de CHECK:&#xa;ERROR 3814: disallowed function: curdate&#xa;&#xa;Implementación: trigger BEFORE INSERT&#xa;trg_transacciones_fecha_limita&#xa;→ SIGNAL SQLSTATE &#39;45000&#39;" vertex="1">
+          <mxGeometry height="130" width="380" x="1180" y="620" as="geometry" />
+        </mxCell>
+        <mxCell id="notaVistas" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;align=left;verticalAlign=top;fontFamily=Courier New;spacingLeft=8;spacingTop=6;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="ATRIBUTOS DERIVADOS (vistas SQL)&#xa;&#xa;v_saldo_usuario  →  saldo_total de USUARIOS&#xa;v_gasto_categoria_periodo  →  gastado de PRESUPUESTOS&#xa;v_historial_movimientos  →  UNION de INGRESO y GASTO" vertex="1">
+          <mxGeometry height="110" width="380" x="1180" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="notaMatriz" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=10;align=left;verticalAlign=top;fontFamily=Courier New;spacingLeft=8;spacingTop=6;labelBackgroundColor=none;sketch=1;curveFitting=1;jiggle=2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="MATRIZ DE REQUISITOS&#xa;&#xa;4+ entidades .............. 10 tablas&#xa;Relación 1:N ............. USUARIOS → CUENTAS&#xa;Relación N:M ............. USUARIO_CUENTA&#xa;Relación 1:1 ............. USUARIOS ↔ PERFILES&#xa;Atributo multivaluado .... TELEFONOS&#xa;Atributo derivado ........ v_saldo_usuario&#xa;Jerarquía ............... TRANSACCIÓN → INGRESO/GASTO&#xa;Regla de negocio ......... trigger 90 días" vertex="1">
+          <mxGeometry height="170" width="330" x="50" y="780" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

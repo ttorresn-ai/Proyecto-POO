@@ -1,0 +1,15 @@
+# =============================================================================
+#  NEXUS FINANCE - Configuración de base de datos
+#  Copia este archivo a src/main/resources/db.properties y ajusta los valores.
+#  El archivo original NO debe subirse al repositorio (ver .gitignore).
+# =============================================================================
+
+# URL de conexión MySQL. Incluye useSSL=false para entornos locales.
+db.url=jdbc:mysql://localhost:3306/nexus_finance?useSSL=false&serverTimezone=America/Bogota&allowPublicKeyRetrieval=true
+
+# Credenciales
+db.user=root
+db.password= ElPezNada78
+
+# Driver (dejarlo tal cual salvo que uses otro gestor)
+db.driver=com.mysql.cj.jdbc.Driver

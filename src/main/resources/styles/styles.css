@@ -1,0 +1,214 @@
+/* =============================================================================
+   NEXUS FINANCE // CORE_SYSTEM
+   Hoja de estilos principal. Complementa los estilos en línea de CyberTheme.
+   Se carga desde ModuloAutenticado en cada pantalla autenticada.
+   ============================================================================= */
+
+.root {
+    -fx-background-color: #05050a;
+    -fx-font-family: 'Courier New';
+}
+
+/* --- Barra de desplazamiento ------------------------------------------------ */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar {
+    -fx-background-color: transparent;
+    -fx-pref-width: 10px;
+    -fx-pref-height: 10px;
+}
+
+.scroll-bar .track {
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: rgba(0, 242, 254, 0.45);
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: rgba(0, 242, 254, 0.75);
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.scroll-bar .corner {
+    -fx-background-color: transparent;
+}
+
+/* --- Tablas ----------------------------------------------------------------- */
+.tabla-neon {
+    -fx-background-color: transparent;
+    -fx-font-family: 'Courier New';
+    -fx-font-size: 12px;
+    -fx-table-cell-size: 32;
+    -fx-grid-cell-color: transparent;
+}
+
+.tabla-neon .column-header-background {
+    -fx-background-color: rgba(0, 242, 254, 0.12);
+}
+
+.tabla-neon .column-header {
+    -fx-text-fill: #00f2fe;
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+    -fx-padding: 8 6 8 6;
+    -fx-alignment: center-left;
+}
+
+.tabla-neon .filler {
+    -fx-background-color: transparent;
+}
+
+.tabla-neon .table-row-cell {
+    -fx-border-color: transparent transparent rgba(0, 242, 254, 0.10) transparent;
+}
+
+.tabla-neon .table-row-cell:filled:even,
+.tabla-neon .table-row-cell:filled:odd {
+    -fx-background-color: rgba(255, 255, 255, 0.015);
+}
+
+.tabla-neon .table-row-cell:filled:hover {
+    -fx-background-color: rgba(0, 242, 254, 0.10);
+}
+
+.tabla-neon .table-row-cell:filled:selected {
+    -fx-background-color: rgba(0, 242, 254, 0.22);
+    -fx-text-fill: #ffffff;
+}
+
+.tabla-neon .table-cell {
+    -fx-text-fill: #a2b0b8;
+    -fx-border-color: transparent;
+    -fx-padding: 4 6 4 6;
+}
+
+.tabla-neon .placeholder .label {
+    -fx-text-fill: #666688;
+    -fx-font-family: 'Courier New';
+}
+
+/* --- Gráficas --------------------------------------------------------------- */
+.chart {
+    -fx-background-color: transparent;
+}
+
+.chart-title {
+    -fx-text-fill: #00f2fe;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.chart .axis {
+    -fx-tick-label-fill: #a2b0b8;
+    -fx-tick-mark-visible: false;
+    -fx-font-size: 10px;
+}
+
+.chart .axis-label {
+    -fx-text-fill: #a2b0b8;
+    -fx-font-size: 10px;
+}
+
+.chart .axis .axis-minor-tick-mark {
+    -fx-opacity: 0;
+}
+
+.chart-vertical-grid-lines,
+.chart-horizontal-grid-lines {
+    -fx-stroke: rgba(0, 242, 254, 0.10);
+}
+
+.chart-legend-item {
+    -fx-text-fill: #a2b0b8;
+    -fx-font-size: 10px;
+}
+
+.chart-legend-item .chart-legend-symbol {
+    -fx-background-color: #00f2fe;
+}
+
+.chart .default-color0.chart-bar {
+    -fx-fill: #13c784;
+    -fx-background-color: #13c784;
+}
+
+.chart .default-color0.chart-pie {
+    -fx-fill: #00f2fe;
+    -fx-background-color: #00f2fe;
+}
+
+.chart .default-color1.chart-pie {
+    -fx-fill: #13c784;
+    -fx-background-color: #13c784;
+}
+
+.chart .default-color2.chart-pie {
+    -fx-fill: #ff3366;
+    -fx-background-color: #ff3366;
+}
+
+.chart .default-color3.chart-pie {
+    -fx-fill: #ffa500;
+    -fx-background-color: #ffa500;
+}
+
+.chart .default-color4.chart-pie {
+    -fx-fill: #9b59ff;
+    -fx-background-color: #9b59ff;
+}
+
+.chart-pie-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 10px;
+}
+
+/* --- Controles diversos ----------------------------------------------------- */
+.separator .line {
+    -fx-border-color: rgba(0, 242, 254, 0.20);
+    -fx-border-width: 1 0 0 0;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: #a2b0b8;
+    -fx-font-family: 'Courier New';
+    -fx-font-size: 12px;
+    -fx-background-color: #0a0f1e;
+}
+
+.combo-box .list-view {
+    -fx-background-color: #0a0f1e;
+    -fx-border-color: rgba(0, 242, 254, 0.35);
+}
+
+.combo-box .list-cell:hover {
+    -fx-background-color: rgba(0, 242, 254, 0.16);
+}
+
+.date-picker-popup {
+    -fx-background-color: #0a0f1e;
+}
+
+.date-picker-popup .day-cell {
+    -fx-text-fill: #a2b0b8;
+    -fx-background-color: #0a0f1e;
+}
+
+.date-picker-popup .day-cell:hover {
+    -fx-background-color: rgba(0, 242, 254, 0.20);
+}
